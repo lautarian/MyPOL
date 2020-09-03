@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    background:yellow;
+    height: 70px;
+}
+.container{
+    width: 80%;
+    height: 70px;
+    background: red;
+    margin: auto;
+}
+button{
+    width: 30%;
+    height: 70px;
+    background: green;
+    float: left;
+}
+.logo{
+    width: 40%;
+    height: 70px;
+    background: url(LogoBlanco.png);
+    background-position: center;
+    background-attachment: contain;
+    background-size: contain ;
+    background-repeat: no-repeat;
+    margin: auto;
+    float: left;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+.logo p a{
+    color: #fff;
+    font-size: 40px;
+}
+nav{
+    width: 30%;
+    height: 70px;
+    background: olive;
+    float: left;
+}
+
