@@ -1,0 +1,860 @@
+/* Inicio */
+
+/* LogoBlanco 1 */
+
+
+position: absolute;
+width: 233px;
+height: 118px;
+left: 64px;
+top: 228px;
+
+background: url(LogoBlanco.png);
+
+/* button */
+
+
+position: absolute;
+width: 278px;
+height: 62px;
+left: 41px;
+top: 408px;
+
+/* FondoInicio 1 */
+
+
+position: absolute;
+width: 360px;
+height: 640px;
+left: 0px;
+top: 0px;
+
+background: url(FondoInicio.png);
+
+
+/* InicioSesión */
+
+/* Background */
+
+
+position: absolute;
+width: 360px;
+height: 640px;
+left: 2px;
+top: 2px;
+
+background: linear-gradient(17.56deg, #29ABE2 0%, rgba(255, 255, 255, 0) 100%), #6AD382;
+
+
+/* ¿Todavía no tienes cuenta? ¡Registrate! */
+
+
+position: absolute;
+width: 277px;
+height: 18px;
+left: 43px;
+top: 470px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+text-align: center;
+letter-spacing: 0.08em;
+
+color: #000000;
+
+
+
+/* Olvidé mi contraseña */
+
+
+position: absolute;
+width: 131px;
+height: 16px;
+left: 219px;
+top: 321px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+text-align: center;
+
+color: #4D4D4D;
+
+
+
+/* Mantenerme conectado */
+
+
+position: absolute;
+width: 149px;
+height: 16px;
+left: 35px;
+top: 322px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+text-align: center;
+
+color: #4D4D4D;
+
+
+
+/* Checkbox */
+
+
+position: absolute;
+width: 17px;
+height: 17px;
+left: 12px;
+top: 322px;
+
+background: #FFFFFF;
+
+
+/* CompletarPass */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 12px;
+top: 250px;
+
+
+
+/* CompletarDNI */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 12px;
+top: 186px;
+
+
+
+/* button */
+
+
+position: absolute;
+width: 278px;
+height: 62px;
+left: 42px;
+top: 408px;
+
+
+
+/* Inicia Sesión */
+
+
+position: absolute;
+width: 228px;
+height: 33px;
+left: 12px;
+top: 138px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 38px;
+letter-spacing: 0.08em;
+
+color: #FFFFFF;
+
+
+
+/* back 1 */
+
+
+position: absolute;
+width: 360px;
+height: 551px;
+left: 2px;
+top: 89px;
+
+background: url(back.png);
+mix-blend-mode: multiply;
+
+
+/* Registrarse */
+
+/* Background */
+
+
+position: absolute;
+width: 360px;
+height: 640px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(17.56deg, #29ABE2 0%, rgba(255, 255, 255, 0) 100%), #6AD382;
+
+
+/* back 1 */
+
+
+position: absolute;
+width: 360px;
+height: 551px;
+left: 1px;
+top: 89px;
+
+background: url(back.png);
+mix-blend-mode: multiply;
+
+
+/* button */
+
+
+position: absolute;
+width: 278px;
+height: 62px;
+left: 41px;
+top: 408px;
+
+
+
+/* CompletarPassword */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 315px;
+
+
+
+/* CompletarEmail */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 251px;
+
+
+
+/* CompletarDNI */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 187px;
+
+
+
+/* CompletarNombre */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 123px;
+
+
+
+/* Registrate */
+
+
+position: absolute;
+width: 228px;
+height: 33px;
+left: 11px;
+top: 75px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 38px;
+letter-spacing: 0.08em;
+
+color: #FFFFFF;
+
+
+/* RecuperarContraseña */
+
+/* Background */
+
+
+position: absolute;
+width: 360px;
+height: 539px;
+left: 0px;
+top: 89px;
+
+background: #FFFFFF;
+
+
+/* Footer */
+
+
+position: absolute;
+width: 360px;
+height: 12px;
+left: 0px;
+top: 628px;
+
+background: #6AD382;
+
+
+/* button */
+
+
+position: absolute;
+width: 278px;
+height: 62px;
+left: 31px;
+top: 408px;
+
+
+
+/* CompletarTel */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 315px;
+
+
+
+/* CompletarEmail */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 251px;
+
+
+
+/* Recuperar contraseña */
+
+
+position: absolute;
+width: 235px;
+height: 84px;
+left: 11px;
+top: 155px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 38px;
+letter-spacing: 0.08em;
+
+color: #6AD382;
+
+
+
+/* Header */
+
+
+position: absolute;
+width: 360px;
+height: 89px;
+left: 0px;
+top: 0px;
+
+background: #6AD382;
+
+
+/* back-icon */
+
+
+position: absolute;
+width: 34px;
+height: 35px;
+left: 11px;
+top: 27px;
+
+background: url(back-icon.png);
+
+
+/* logo-header */
+
+
+position: absolute;
+width: 112px;
+height: 45px;
+left: 124px;
+top: 27px;
+
+background: url(logo-header.png);
+
+/* Busqueda */
+
+/* Background */
+
+
+position: absolute;
+width: 360px;
+height: 539px;
+left: 0px;
+top: 89px;
+
+background: #FFFFFF;
+
+
+/* Footer */
+
+
+position: absolute;
+width: 360px;
+height: 12px;
+left: 0px;
+top: 628px;
+
+background: #6AD382;
+
+
+/* button */
+
+
+position: absolute;
+width: 278px;
+height: 62px;
+left: 31px;
+top: 488px;
+
+
+
+/* CompletarOS */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 398px;
+
+
+
+/* CompletarEsp */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 334px;
+
+
+
+/* CompletarLoc */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 270px;
+
+
+
+/* CompletarProv */
+
+
+position: absolute;
+width: 338px;
+height: 56px;
+left: 11px;
+top: 206px;
+
+
+
+/* Encontrá tu prestador */
+
+
+position: absolute;
+width: 235px;
+height: 84px;
+left: 11px;
+top: 110px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 38px;
+letter-spacing: 0.08em;
+
+color: #6AD382;
+
+
+
+/* Header */
+
+
+position: absolute;
+width: 360px;
+height: 89px;
+left: 0px;
+top: 0px;
+
+background: #6AD382;
+
+
+/* logo-header */
+
+
+position: absolute;
+width: 112px;
+height: 45px;
+left: 124px;
+top: 27px;
+
+background: url(logo-header.png);
+
+
+/* menu-icon */
+
+
+position: absolute;
+width: 34px;
+height: 35px;
+left: 315px;
+top: 27px;
+
+background: url(menu-icon.png);
+
+
+/* ResultadoBusqueda */
+
+/* Background */
+
+
+position: absolute;
+width: 360px;
+height: 539px;
+left: 0px;
+top: 89px;
+
+background: #FFFFFF;
+
+
+/* Footer */
+
+
+position: absolute;
+width: 360px;
+height: 12px;
+left: 0px;
+top: 628px;
+
+background: #6AD382;
+
+
+/* Resultados de la búsqueda */
+
+
+position: absolute;
+width: 273px;
+height: 84px;
+left: 11px;
+top: 110px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 38px;
+letter-spacing: 0.08em;
+
+color: #6AD382;
+
+
+
+/* Header */
+
+
+position: absolute;
+width: 360px;
+height: 89px;
+left: 0px;
+top: 0px;
+
+background: #6AD382;
+
+
+/* back-icon */
+
+
+position: absolute;
+width: 34px;
+height: 35px;
+left: 11px;
+top: 27px;
+
+background: url(back-icon.png);
+
+
+/* logo-header */
+
+
+position: absolute;
+width: 112px;
+height: 45px;
+left: 124px;
+top: 27px;
+
+background: url(logo-header.png);
+
+
+/* menu-icon */
+
+
+position: absolute;
+width: 34px;
+height: 35px;
+left: 315px;
+top: 27px;
+
+background: url(menu-icon.png);
+
+
+/* ResultadoDoc */
+
+
+position: absolute;
+width: 338px;
+height: 95px;
+left: 11px;
+top: 206px;
+
+
+
+/* ResultadoDoc */
+
+
+position: absolute;
+width: 338px;
+height: 95px;
+left: 11px;
+top: 311px;
+
+
+
+/* ResultadoDoc */
+
+
+position: absolute;
+width: 338px;
+height: 95px;
+left: 11px;
+top: 416px;
+
+
+
+/* ResultadoDoc */
+
+
+position: absolute;
+width: 338px;
+height: 95px;
+left: 11px;
+top: 521px;
+
+
+/* PerfilPrestador */
+
+/* Background */
+
+
+position: absolute;
+width: 360px;
+height: 539px;
+left: 0px;
+top: 89px;
+
+background: #FFFFFF;
+
+
+/* Footer */
+
+
+position: absolute;
+width: 360px;
+height: 12px;
+left: 0px;
+top: 628px;
+
+background: #6AD382;
+
+
+/* Nombre y Apellido */
+
+
+position: absolute;
+width: 273px;
+height: 84px;
+left: 11px;
+top: 198px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 38px;
+letter-spacing: 0.08em;
+
+color: #6AD382;
+
+
+
+/* MP */
+
+
+position: absolute;
+width: 273px;
+height: 38px;
+left: 11px;
+top: 275px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 28px;
+letter-spacing: 0.08em;
+
+color: #2F295B;
+
+
+
+/* ESPECIALIDAD */
+
+
+position: absolute;
+width: 273px;
+height: 38px;
+left: 11px;
+top: 340px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: 900;
+font-size: 21px;
+line-height: 25px;
+letter-spacing: 0.08em;
+
+color: #2F295B;
+
+
+
+/* Dirección */
+
+
+position: absolute;
+width: 273px;
+height: 20px;
+left: 11px;
+top: 391px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.08em;
+
+color: #4D4D4D;
+
+
+
+/* Teléfono */
+
+
+position: absolute;
+width: 273px;
+height: 20px;
+left: 11px;
+top: 422px;
+
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.08em;
+
+color: #4D4D4D;
+
+
+
+/* Header */
+
+
+position: absolute;
+width: 360px;
+height: 89px;
+left: 0px;
+top: 0px;
+
+background: #6AD382;
+
+
+/* back-icon */
+
+
+position: absolute;
+width: 34px;
+height: 35px;
+left: 11px;
+top: 27px;
+
+background: url(back-icon.png);
+
+
+/* logo-header */
+
+
+position: absolute;
+width: 112px;
+height: 45px;
+left: 124px;
+top: 27px;
+
+background: url(logo-header.png);
+
+
+/* menu-icon */
+
+
+position: absolute;
+width: 34px;
+height: 35px;
+left: 315px;
+top: 27px;
+
+background: url(menu-icon.png);
+
+
+/* Avatar 1 */
+
+
+position: absolute;
+width: 129px;
+height: 126px;
+left: 203px;
+top: 194px;
+
+background: url(Avatar.png);
