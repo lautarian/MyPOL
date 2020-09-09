@@ -11,6 +11,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    
 
     <!--Estilos en Css-->
@@ -42,8 +43,66 @@
         }
 
 
-
-
+        .card{
+        padding: 1rem!important;
+        border: none;
+        margin-bottom:1rem;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+        }
+        .card:hover{
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+        .card .card-block{
+        padding-left: 50px;
+        position: relative;
+        }
+        .card .card-block a{
+        color: #21967bde !important;
+        font-weight:700;
+        text-decoration:none;
+        }
+        .card .card-block a i{
+        display:none;
+        
+        }
+        .card:hover .card-block a i{
+        display:inline-block;
+        font-weight:700;
+        
+        }
+        .card .card-block:before{
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 39px;
+        color: #46c7a9e3;
+        left: 0;
+        -webkit-transition: -webkit-transform .2s ease-in-out;
+        transition:transform .2s ease-in-out;
+        }
+        .card .block-1:before{
+            content: "\f0f0";
+        }
+        .card .block-2:before{
+            content: "\f0f1";
+        }
+        .card .block-3:before{
+            content: "\f0f0";
+        }
+        .card .block-4:before{
+            content: "\f0f1";
+        }
+        
+        .card:hover .card-block:before{
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);	
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
 
         .bottom {
             background-color: #1ba8725e;
@@ -69,6 +128,27 @@
         .bottom .copyright p, .bottom .copyright a:hover{
             color: #0b7a68da;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
     <title>Hello, world!</title>
 
@@ -92,7 +172,7 @@
         <!--agregar barra de navegacion (PANTALLAS CON BARRA NAVEGACION)-->
         <nav class="navbar section navbar-expand-lg navbar-dark bg-info sticky-top">
             <!--intento de boton para atras-->
-            <a href="#principal">
+            <a href="template_encontraTuPol.html#cuerpito">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
@@ -123,71 +203,53 @@
 
         <section class="expand-lg pantallas">
             <div id="busqueda">
-                <h1 class="text-center text-info pt-5 mb-2 "></br>Encontrá tu prestador</h1>
-                <div class="container">
-                    <div id="options-row" class="row d-flex justify-content-around ">
+                <h1 class="text-center text-info pt-5 mb-2 "></br>Resultados de la busqueda</h1>
+                
+
+                </br></br></br>
+                    <!--ACA VAN LAS TARJETAS DE LOS DOCTORES CON SUS DETALLES-->
+                    <div id="results-row" class="row d-flex justify-content-around">
                         <div class="col-sm">
-                            <div class="form-group">
-                                </br>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>-ELIJA UNA ESPECIALIDAD-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
-                            </div>
-                            
-                        </div>
-                        <div class="col-sm">
-                            <div class="form-group">
-                                </br>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>-ELIJA UNA OBRA SOCIAL-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
+                            <div class="card">
+                                <div class="card-block block-1">
+                                    <h3 class="card-title">Nombre y Apellido</h3>
+                                    <p class="card-text">Especialidad:</br>Obra Social:</br>Localidad:</p>
+                                    <a href="template_perfilPrestador.html#cuerpito" title="Read more" class="read-more" >Ver mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm">
-                            <div class="form-group">
-                                </br>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>-ELIJA UNA PROVINCIA-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
+                            <div class="card">
+                                <div class="card-block block-2">
+                                    <h3 class="card-title">Nombre y Apellido</h3>
+                                    <p class="card-text">Especialidad:</br>Obra Social:</br>Localidad:</p>
+                                    <a href="template_perfilPrestador.html#cuerpito" title="Read more" class="read-more" >Ver mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                </div>
                             </div>
-                    
                         </div>
                         <div class="col-sm">
-                            <div class="form-group">
-                                </br>
-                                <select class="form-control " id="exampleFormControlSelect1">
-                                  <option>-ELIJA UNA LOCALIDAD-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
+                            <div class="card">
+                                <div class="card-block block-3">
+                                    <h3 class="card-title">Nombre y Apellido</h3>
+                                    <p class="card-text">Especialidad:</br>Obra Social:</br>Localidad:</p>
+                                    <a href="template_perfilPrestador.html#cuerpito" title="Read more" class="read-more" >Ver mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card">
+                                <div class="card-block block-4">
+                                    <h3 class="card-title">Nombre y Apellido</h3>
+                                    <p class="card-text">Especialidad:</br>Obra Social:</br>Localidad:</p>
+                                    <a href="template_perfilPrestador.html#cuerpito" title="Read more" class="read-more" >Ver mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                </div>
                             </div>
                         </div>
                         
                     </div>
-                    </br></br>
-
-                    <!--BOTON DE BUSCAR LOS PRESTADORES-->
-                    <div class="container d-flex justify-content-center">
-                        </br></br>
-                        <a class="" href="template_resultadosBusq.html#cuerpito"><button type="button" class="btn btn-outline-info btn-lg">- B U S C A R -</button></a>
-
+                        
                     </div>
                 </div>
-                
             </div>
     
         </section>

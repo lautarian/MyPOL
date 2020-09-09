@@ -2,7 +2,6 @@
 
 
 
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,7 +11,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ab85804bba.js" crossorigin="anonymous"></script>
 
     <!--Estilos en Css-->
     <style>
@@ -31,7 +31,7 @@
             background-position: center;
         }
         .cuerpo{
-            background: url("images/Fondo_CrucesDegradado.png");
+            background: url("images/Fondo_Cruces.png");
             height: 100vh;
             background-size: cover;
             background-position: center;
@@ -42,6 +42,67 @@
             margin-top:5rem;
         }
 
+
+        .card{
+        padding: 1rem!important;
+        border: none;
+        margin-bottom:1rem;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+        }
+        .card:hover{
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+        .card .card-block{
+        padding-left: 50px;
+        position: relative;
+        }
+        .card .card-block a{
+        color: #b3f1e3e0 !important;
+        font-weight:700;
+        text-decoration:none;
+        }
+        .card .card-block a i{
+        display:none;
+        
+        }
+        .card:hover .card-block a i{
+        display:inline-block;
+        font-weight:700;
+        
+        }
+        .card .card-block:before{
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 39px;
+        color: #8ae4cfec;
+        left: 0;
+        -webkit-transition: -webkit-transform .2s ease-in-out;
+        transition:transform .2s ease-in-out;
+        }
+        .card .block-1:before{
+            content: "\f0f0";
+        }
+        .card .block-2:before{
+            content: "\f0f1";
+        }
+        .card .block-3:before{
+            content: "\f0f0";
+        }
+        .card .block-4:before{
+            content: "\f0f1";
+        }
+        
+        .card:hover .card-block:before{
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);	
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
 
         .bottom {
             background-color: #1ba8725e;
@@ -67,6 +128,26 @@
         .bottom .copyright p, .bottom .copyright a:hover{
             color: #0b7a68da;
         }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </style>
     <title>Hello, world!</title>
@@ -91,7 +172,7 @@
         <!--agregar barra de navegacion (PANTALLAS CON BARRA NAVEGACION)-->
         <nav class="navbar section navbar-expand-lg navbar-dark bg-info sticky-top">
             <!--intento de boton para atras-->
-            <a href="#principal">
+            <a href="template_resultadosBusq.html#cuerpito">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
@@ -109,50 +190,48 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            
+            <!--opciones barra navegacin-->
+            <div class="collapse navbar-collapse" id="Menudesplegable">
+                <div class="navbar-nav ml-auto text-center">
+                    <a style="color:white; " class="nav-link " href="#">Mi Cuenta</a>
+                    <a style="color:white; " class="nav-link" href="template_miLista.html#cuerpito">Mi Lista</a>
+                    <a style="color:white; " class="nav-link" href="template_inicial.html#principal">Cerrar Sesion</a>
+                </div>
+            </div>
         </nav>
 
 
         <section class="expand-lg pantallas">
-            <div id="login">
-                <h2 class="text-center text-white pt-5 mb-2 ">Inicia sesión</h2>
-                <div class="container">
-                    <div id="login-row" class="row justify-content-center align-items-center">
-                        <div id="login-column" class="col-md-6">
-                            <div id="login-box" class="col-md-12 mt-2">
-                                <form id="login-form" class="form" action="" method="post">
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="username" id="username" class="form-control mt-3 mb-3" placeholder="DNI" required autofocus>
-                                    </div>
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="password" id="password" class="form-control mt-3 mb-3" placeholder="Password" required>
-                                    </div>
-                                    <div class="form-group d-flex justify-content-between mb-3">
-                                        <label for="remember-me"  class="text-info text-dark"><span>Mantenerme conectado</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                        <div id="forgot-password" class="text-right ">
-                                            <a href="template_recuperar.html#cuerpito" font class="text-info text-dark">Olvidé mi contraseña</a>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="form-group d-flex justify-content-center mt-3">
-                                        <input type="submit" name="submit" class="btn btn-info btn-lg" value="LOG IN">
-                                        
-                                    </div>
-                                    <div id="register-link" class=" d-flex justify-content-center">
-                                        <a href="template_registrate.html#cuerpito"  class="text-info text-dark">¿Todavia no tenes una cuenta? ¡Registrate! </a>
-                                    </div>
-                                    
-                                </form>
+            <div id="busqueda">
+                <h1 class="text-center text-info pt-5 mb-2 "></br>Tu prestador</h1>
+                <div class="container-fluid">
+                    
+                    <!--ACA VAN LAS TARJETAS DE LOS DOCTORES CON SUS DETALLES-->
+                    </br></br>
+                    <div class="col-mb-4 d-flex justify-content-center">
+                        
+                        <div class="card text-white bg-info mb-3" style="width: 28rem;">
+                            <div class="card-block block-1">
+                                <h3 class="card-title">Nombre y Apellido</h3>
+                                <p class="card-text">Especialidad:</p>
+                                <p class="card-text">Obra Social:</p>
+                                <p class="card-text">Localidad:</p>
+                                <p class="card-text">Direccion:</p>
+                                <p class="card-text">Numeros de contacto:</p>
+                                
+                                
+                                <a href="https://www.fiverr.com/share/qb8D02" title="Guardar como favorito" class="read-more" >Añadir a Mi Lista<i class="fas fa-star ml-2"></i></a>
                             </div>
                         </div>
                     </div>
+                    
+                    
                 </div>
             </div>
     
         </section>
     </div>
+    
     <div class="footer linea1">
         <div class="bottom section-padding">
 			<div class="container linea1">
@@ -166,7 +245,6 @@
 			</div>
 		</div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

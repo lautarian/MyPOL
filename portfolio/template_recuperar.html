@@ -42,6 +42,35 @@
         .registro{
             margin-top:5rem;
         }
+
+
+        .bottom {
+            background-color: #1ba8725e;
+        }
+        .bottom .copyright {
+            color: #1599a300;
+            font-weight: 600;
+        }
+        .copyright a {
+            color: #fdfdfdce;
+            margin-left: 3px;
+            padding-right: 3px;
+        }
+        .bottom p {
+            margin-bottom: 0;
+            line-height: 50px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .copyright p span {
+            color: #0b796f;
+        }
+        .bottom .copyright p, .bottom .copyright a:hover{
+            color: #0b7a68da;
+        }
+
+
+
     </style>
     <title>Hello, world!</title>
 
@@ -65,7 +94,7 @@
         <!--agregar barra de navegacion (PANTALLAS CON BARRA NAVEGACION)-->
         <nav class="navbar section navbar-expand-lg navbar-dark bg-info sticky-top">
             <!--intento de boton para atras-->
-            <a href="#principal">
+            <a href="template_inicial.html#cuerpito">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
@@ -74,7 +103,7 @@
             
             
             <!--logo de marca, barra navegacion-->
-            <a class="navbar-brand mt-2 ml-3" href="#principal">
+            <a class="navbar-brand mt-2 ml-3" href="template_inicial.html#principal">
                 <img src="images/LogoBlanco-1.png" width="160" alt="" loading="lazy">
             </a>
     
@@ -84,13 +113,7 @@
             </button>
             
             <!--opciones barra navegacin-->
-            <div class="collapse navbar-collapse" id="Menudesplegable">
-                <div class="navbar-nav ml-auto text-center">
-                    <a style="color:white; " class="nav-link " href="#">Mi Cuenta</a>
-                    <a style="color:white; " class="nav-link" href="#">Mi Lista</a>
-                    <a style="color:white; " class="nav-link" href="#">Cerrar Sesion</a>
-                </div>
-            </div>
+            
         </nav>
 
 
@@ -129,7 +152,19 @@
     
         </section>
     </div>
-    
+    <div class="footer linea1">
+        <div class="bottom section-padding">
+			<div class="container linea1">
+				<div class="row linea1">
+					<div class="col-md-12 text-center linea1">
+						<div class="copyright">
+							<p>© <span>2020</span> <a href="#" class="transition">MyPOL-Org  -  Informatorio</a> All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
