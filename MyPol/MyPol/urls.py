@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from MyPol import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/',views.home, name='home'),
+    path('login/',views.login, name='login'),
+    path('registrate/',views.registrate, name='registrate'),
+    path('recuperar/',views.recuperar, name='recuperar'),
+    path('encontraTuPol/',views.encontraTuPol, name='encontraTuPol'),
+    path('resultadosBusq/',views.resultadosBusq, name='resultadosBusq'),
+    path('perfilPOL/',views.perfilPOL, name='perfilPOL'),
+    path('miLista/',views.miLista, name='miLista'),
 ]
