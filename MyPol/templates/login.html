@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--RECORDAR MODIFICAR ENLACES A PANTALLA PRINCIPAL, YA QUE CAMBIAN LOS NOMBRES DE LOS ARCHIVOS Y DEMAS-->
 
 {% load static %}
@@ -177,3 +178,16 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </body>
 </html>
+=======
+<h2>Iniciar sesión</h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Login</button>
+</form>
+
+<hr />
+<a href="/register">Registrar usuario</a>
+<a href="#">Olvide mi contraseña</a>
+>>>>>>> bdeb310241452598a5c92ab7cc364208f50d2ca6
