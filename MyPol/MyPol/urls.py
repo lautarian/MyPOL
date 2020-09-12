@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.users import views
-
+from . import views
 from MyPol import views
 
 urlpatterns = [
@@ -34,4 +34,4 @@ urlpatterns = [
     path('perfilPOL/',views.perfilPOL, name='perfilPOL'),
     path('miLista/',views.miLista, name='miLista'),
 ]
-]
+
