@@ -16,14 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.users import views
+<<<<<<< HEAD
 from . import views
+=======
+from apps.buscador import views
+
+>>>>>>> 02a662857095e20881fd4f055efcc52d53ad5df0
 from MyPol import views
 
 urlpatterns = [
-    path('', views.welcome),
-    path('register', views.register),
-    path('login', views.login),
-    path('logout', views.logout),
+    #path('', views.welcome),
+    #path('register', views.register),
+   # path('login', views.login),
+    #path('logout', views.logout),
     path('admin/', admin.site.urls),
     path('home/',views.home, name='home'),
     path('login/',views.login, name='login'),

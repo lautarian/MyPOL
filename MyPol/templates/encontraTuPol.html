@@ -132,12 +132,11 @@
                         <div class="col-sm">
                             <div class="form-group">
                                 </br>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>-ELIJA UNA ESPECIALIDAD-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                <select class="form-control" id="Especialidad">
+                                    <option>-ELIJA UNA ESPECIALIDAD-</option>
+                                    {%for datadisplay in Especialidad %}
+                                    <option value={{datadisplay.NEspe}}>{{datadisplay.NEspe}}</option>
+                                    {%endfor%}
                                 </select>
                             </div>
                             
@@ -147,10 +146,7 @@
                                 </br>
                                 <select class="form-control" id="exampleFormControlSelect1">
                                   <option>-ELIJA UNA OBRA SOCIAL-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                  <option>Insssep</option>
                                 </select>
                             </div>
                         </div>
@@ -159,10 +155,7 @@
                                 </br>
                                 <select class="form-control" id="exampleFormControlSelect1">
                                   <option>-ELIJA UNA PROVINCIA-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                  <option>Chaco</option>
                                 </select>
                             </div>
                     
@@ -172,10 +165,9 @@
                                 </br>
                                 <select class="form-control " id="exampleFormControlSelect1">
                                   <option>-ELIJA UNA LOCALIDAD-</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                  {%for datadisplay in Localidad %}
+                                  <option value={{datadisplay.NEspe}}>{{datadisplay.NLoca}}</option>
+                                  {%endfor%}
                                 </select>
                             </div>
                         </div>

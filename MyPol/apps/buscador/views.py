@@ -1,26 +1,13 @@
-
-from django.shortcuts import render
-import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
-from apps.buscador.models import sqlserverconn
-from apps.buscador.models import Localidad
-from apps.buscador.models import Especialidad
+from .models import sqlserverconn
+from .models import Localidad
+from .models import Especialidad
 import pyodbc
 
-def home(request):
-    return render(request, "home.html", {})
+# Create your views here.
 
-def login(request):
-    return render(request, "login.html", {})
-
-def registrate(request):
-    return render(request, "registrate.html", {})
-
-def recuperar(request):
-    return render(request, "recuperar.html", {})
-
-def encontraTuPol(request):
+def connsql(request):
     conn=pyodbc.connect('Driver={sql server};'
                         'Server=mypol.database.windows.net;'
                         'Database=MyPol;'
@@ -60,26 +47,3 @@ def encontraTuPol(request):
     
     
     return render(request,'encontraTuPol.html',{'sqlserverconn':result, 'Localidad':result2, 'Especialidad':result3})
-
-def resultadosBusq(request):
-    return render(request, "resultadosBusq.html", {})
-
-def perfilPOL(request):
-    return render(request, "perfilPOL.html", {})
-
-def miLista(request):
-    return render(request, "miLista.html", {})
-
-def login2(request):
-    form = AuthenticationForm()
-    if request.method == "POST":
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                do_login(request, user)
-                return redirect('/')
-
-    return render(request, "login2.html", {'form': form})
