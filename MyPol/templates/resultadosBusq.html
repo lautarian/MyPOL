@@ -211,21 +211,21 @@
 
                 </br></br></br>
                     <!--ACA VAN LAS TARJETAS DE LOS DOCTORES CON SUS DETALLES-->
-                    <div id="results-row" class="row d-flex justify-content-around">
-                        <div class="container">
-                            
-                            <div clas="col-md-12">
-                                {%for datadisplay in sqlserverconn%}
-                                <div class="card" style="width: 30rem;">
-                                    <div class="card-body">
-                                        <h3 class="card-title">{{datadisplay.nombrePrestador}}</h3>
-                                        <p class="card-text">Especialidad: {{datadisplay.nombreEspecialidad}}:</br>Obra Social: INSSSEP</br>Localidad: {{datadisplay.nombreLocalidad}}</p>
-                                        <a href="template_perfilPrestador.html#cuerpito" title="Read more" class="read-more" >Ver mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                    <div id="results-row" class="container">
+                        <div class="row">
+                            {%for datadisplay in sqlserverconn%}
+                            <div clas="col-sm-6" border="1">
+                                <div class="card">
+                                    <div class="card-block block-1" style="width: 30rem;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">{{datadisplay.nombrePrestador}}</h3>
+                                            <p class="card-text">Especialidad: {{datadisplay.nombreEspecialidad}}:</br>Obra Social: INSSSEP</br>Localidad: {{datadisplay.nombreLocalidad}}</p>
+                                            <a href="template_perfilPrestador.html#cuerpito" title="Read more" class="read-more" >Ver mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                        </div>
                                     </div>
-                                </div>
-                                {%endfor%}
+                                </div>    
                             </div>
-                            
+                            {%endfor%}
                         <!-- </div>
                         <div class="col-sm">
                             <div class="card">

@@ -22,7 +22,7 @@ def recuperar(request):
 
 def encontraTuPol(request):
     conn=pyodbc.connect('Driver={sql server};'
-                        'Server=mypol.database.windows.net;'
+                        'Server=tcp:mypol.database.windows.net;'
                         'Database=MyPol;'
                         'UID=Administrador;'
                         'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
@@ -63,7 +63,7 @@ def encontraTuPol(request):
 
 def resultadosBusq(request):
     conn2=pyodbc.connect('Driver={sql server};'
-                        'Server=mypol.database.windows.net;'
+                        'Server=tcp:mypol.database.windows.net;'
                         'Database=MyPol;'
                         'UID=Administrador;'
                         'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
