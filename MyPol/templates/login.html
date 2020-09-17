@@ -85,7 +85,7 @@
         <!--agregar barra de navegacion (PANTALLAS CON BARRA NAVEGACION)-->
         <nav class="navbar section navbar-expand-lg navbar-dark bg-info sticky-top">
             <!--intento de boton para atras-->
-            <a href="#principal">
+            <a href="/">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
@@ -94,7 +94,7 @@
             
             
             <!--logo de marca, barra navegacion-->
-            <a class="navbar-brand mt-2 ml-3" href="#principal">
+            <a class="navbar-brand mt-2 ml-3" href="/">
                 <img src="{% static 'images/LogoBlanco-1.png' %}" width="160" alt="" loading="lazy">
             </a>
     
@@ -126,7 +126,7 @@
                                     <div class="form-group d-flex justify-content-between mb-3">
                                         <label for="remember-me"  class="text-info text-dark"><span>Mantenerme conectado</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                         <div id="forgot-password" class="text-right ">
-                                            <a href="template_recuperar.html#cuerpito" font class="text-info text-dark">Olvidé mi contraseña</a>
+                                            <a href="/recuperar" font class="text-info text-dark">Olvidé mi contraseña</a>
                                         </div>
                                         
                                     </div>
@@ -135,7 +135,7 @@
                                         
                                     </div>
                                     <div id="register-link" class=" d-flex justify-content-center">
-                                        <a href="template_registrate.html#cuerpito"  class="text-info text-dark">¿Todavia no tenes una cuenta? ¡Registrate! </a>
+                                        <a href="/registrate"  class="text-info text-dark">¿Todavia no tenes una cuenta? ¡Registrate! </a>
                                     </div>
                                     
                                 </form>
