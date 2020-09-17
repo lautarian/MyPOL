@@ -1,9 +1,7 @@
 <!--RECORDAR MODIFICAR ENLACES A PANTALLA PRINCIPAL, YA QUE CAMBIAN LOS NOMBRES DE LOS ARCHIVOS Y DEMAS-->
 
-
-
-
 {% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +11,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ab85804bba.js" crossorigin="anonymous"></script>
 
     <!--Estilos en Css-->
     <style>
@@ -32,7 +31,7 @@
             background-position: center;
         }
         .cuerpo{
-            background: url("{% static 'images/Fondo_CrucesDegradado.png' %}");
+            background: url("{% static 'images/Fondo_Cruces.png' %}");
             height: 100vh;
             background-size: cover;
             background-position: center;
@@ -42,6 +41,75 @@
         .registro{
             margin-top:5rem;
         }
+
+        .card{
+        padding: 1rem!important;
+        border: none;
+        margin-bottom:1rem;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+        }
+        .card:hover{
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+        .card .card-block{
+        padding-left: 50px;
+        position: relative;
+        }
+        .card .card-block a{
+        color: #21967bde !important;
+        font-weight:700;
+        text-decoration:none;
+        }
+
+        .card .tarjet a{
+        color: #b3f1e3e0 !important;
+        font-weight:700;
+        text-decoration:none;
+        }
+        
+        .card .card-block a i{
+        display:none;
+        
+        }
+        .card:hover .card-block a i{
+        display:inline-block;
+        font-weight:700;
+        
+        }
+        .card .card-block:before{
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 39px;
+        color: #46c7a9e3;
+        left: 0;
+        -webkit-transition: -webkit-transform .2s ease-in-out;
+        transition:transform .2s ease-in-out;
+        }
+        .card .block-1:before{
+            content: "\f0f0";
+        }
+        .card .block-2:before{
+            content: "\f0f1";
+        }
+        .card .block-3:before{
+            content: "\f0f0";
+        }
+        .card .block-4:before{
+            content: "\f0f1";
+        }
+        
+        .card:hover .card-block:before{
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);	
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
+
 
 
         .bottom {
@@ -70,9 +138,6 @@
         .bottom .copyright p, .bottom .copyright a:hover{
             color: #0b7a68da;
         }
-
-
-
     </style>
     <title>MyPOL-Mi Prestador Online</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}"
@@ -81,23 +146,14 @@
 
   <body>
     <!--parte inicial de presentacion, PANTALLA 1-->
-    <section class="container-fluid slider d-flex justify-content-center align-items-center" id="principal">
-        <div class="container d-flex justify-content-center ">
-            <a class="" href="#cuerpito"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
-            
-        </div>
-        
-    </section>
 
-
-
-
+    
     <!--CUERPO PANTALLAS 2-3-4-5-6-7-8-9 (PANTALLAS CON BARRA NAVEGACION)-->
     <div class="cuerpo" id="cuerpito">
         <!--agregar barra de navegacion (PANTALLAS CON BARRA NAVEGACION)-->
         <nav class="navbar section navbar-expand-lg navbar-dark bg-info sticky-top">
             <!--intento de boton para atras-->
-            <a href="template_inicial.html#cuerpito">
+            <a href="#principal">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
@@ -106,7 +162,7 @@
             
             
             <!--logo de marca, barra navegacion-->
-            <a class="navbar-brand mt-2 ml-3" href="template_inicial.html#principal">
+            <a class="navbar-brand mt-2 ml-3" href="#principal">
                 <img src="{% static 'images/LogoBlanco-1.png' %}" width="160" alt="" loading="lazy">
             </a>
     
@@ -116,44 +172,19 @@
             </button>
             
             <!--opciones barra navegacin-->
-            
+            <div class="collapse navbar-collapse" id="Menudesplegable">
+                <div class="navbar-nav ml-auto text-center">
+                    <a style="color:white; " class="nav-link " href="#">Mi Cuenta</a>
+                    <a style="color:white; " class="nav-link" href="miLista.html">Mi Lista</a>
+                    <a style="color:white; " class="nav-link" href="template_inicial.html#principal">Cerrar Sesion</a>
+                </div>
+            </div>
         </nav>
 
 
-        <section class="expand-lg pantallas">
-            <div id="login">
-                <h2 class="text-center text-info pt-5 mb-2 ">Recuperar contraseña</h2>
-                <div class="container">
-                    <div id="login-row" class="row justify-content-center align-items-center">
-                        <div id="login-column" class="col-md-6">
-                            <div id="login-box" class="col-md-12 mt-2">
-                                <form id="login-form" class="form" action="" method="post">
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="EMAIL" id="EMAIL" class="form-control mt-3 mb-3" placeholder="EMAIL" required autofocus>
-                                    </div>
-                                    <div class="form-group mt-3 mb-2">
-                                        
-                                        <input type="text" name="TEL" id="TEL" class="form-control mt-3 mb-3" placeholder="Telefono" required>
-                                    </div>
-                                    <div class="form-group d-flex justify-content-between mb-3">
-                                        </br>
-                                        </br>
-                                    </div>
-                                    <div class="form-group d-flex justify-content-center mt-3">
-                                        <input type="submit" name="submit" class="btn btn-info btn-lg" value="  E N V I A R  ">
-                                        
-                                    </div>
-                                    
-                                    
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-        </section>
+        {% block content %}
+
+        {% endblock %}
     </div>
     <div class="footer linea1">
         <div class="bottom section-padding">
