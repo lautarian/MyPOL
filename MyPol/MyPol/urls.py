@@ -15,24 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.users import views
 from apps.buscador import views
-from apps.users import views
-
-
+from  django.views.generic.base  import  TemplateView 
 from MyPol import views
 
 urlpatterns = [
-    
     path('',views.home, name='home'),
-    path('users/',include('apps.users.urls')),
     path('login/',views.login, name='login'),
     path('admin/', admin.site.urls),
-    path('registrate/',views.registrate, name='registrate'),
     path('recuperar/',views.recuperar, name='recuperar'),
     path('encontraTuPol/',views.encontraTuPol, name='encontraTuPol'),
     path('resultadosBusq/',views.resultadosBusq, name='resultadosBusq'),
     path('perfilPOL/',views.perfilPOL, name='perfilPOL'),
     path('miLista/',views.miLista, name='miLista'),
-]
-
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('base/',views.base, name='base'),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('accounts/', include('apps.accounts.urls')),
+ ]

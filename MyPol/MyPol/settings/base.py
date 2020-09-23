@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.portador',
-    'apps.users',
-    'apps.buscador'
-    
+    'apps.buscador',
+    'apps.accounts',    
 ]
 
 MIDDLEWARE = [
@@ -128,3 +127,8 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
+
+LOGIN_REDIRECT_URL = 'encontraTuPol'
+
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))

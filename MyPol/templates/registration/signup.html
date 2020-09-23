@@ -4,7 +4,6 @@
 
 {% load static %}
 
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -77,9 +76,6 @@
 
   </head>
 
-  <body>
-    <!--parte inicial de presentacion, PANTALLA 1-->
-    
 
     <!--CUERPO PANTALLAS 2-3-4-5-6-7-8-9 (PANTALLAS CON BARRA NAVEGACION)-->
     <div class="cuerpo" id="cuerpito">
@@ -107,7 +103,7 @@
             
         </nav>
 
-
+    <body>  
         <section class="expand-lg pantallas">
             <div id="login">
                 <h2 class="text-center text-white pt-5 mb-2 "> Registrate </h2>
@@ -116,32 +112,16 @@
                         <div id="login-column" class="col-md-6">
                             <div id="login-box" class="col-md-12 mt-2">
                                 <form id="login-form" class="form" action="" method="post">
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="NombreyApellido" id="NombreyApellido" class="form-control mt-3 mb-3" placeholder="Nombre y Apellido" required autofocus>
-                                    </div>
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="DNI" id="dni" class="form-control mt-3 mb-3" placeholder="D N I" required>
-                                    </div>
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="EMAIL" id="email" class="form-control mt-3 mb-3" placeholder="EMAIL" required>
-                                    </div>
-                                    <div class="form-group mt-3 mb-3">
-                                        
-                                        <input type="text" name="password" id="password" class="form-control mt-3 mb-3" placeholder="Password" required>
-                                    </div>
-                                    <div class="form-group d-flex justify-content-between mb-3">
-                                        </br>
-                                        </br>
-                                    </div>
-                                    <div class="form-group d-flex justify-content-center mt-3 ">
-                                        <input type="submit" name="submit" class="btn btn-info btn-lg" value="  REGISTRARSE  ">
-                                        
-                                    </div>
+
                                     
+
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
                                     
+                                    <div class="form-group d-flex justify-content-center mt-3">
+
+                                        <button type="submit" class="btn btn-info btn-lg ">SIGN UP</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>

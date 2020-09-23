@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: =?utf-8?q?Reinicio_de_contrase=C3=B1a_en_localhost=3A8000?=
+From: webmaster@localhost
+To: lautarian.a@gmail.com
+Date: Tue, 22 Sep 2020 22:15:32 -0000
+Message-ID: 
+ <160081293267.2596.13446702889885152160@CESAR_NOTEBOOK.fibertel.com.ar>
+
+
+Le enviamos este email porque Ud. ha solicitado que se reestablezca la contraseña para su cuenta de usuario en localhost:8000.
+
+Por favor visite la página que se muestra a continuación y elija una nueva contraseña:
+
+http://localhost:8000/accounts/reset/NQ/aam85w-82fc9cca77e83ecca659d87c84317804/
+
+Su nombre de usuario en caso de que lo haya olvidado: lautarian2
+
+¡Gracias por usar nuestro sitio!
+
+El equipo de localhost:8000
+
+
+
+-------------------------------------------------------------------------------
