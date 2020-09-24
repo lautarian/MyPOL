@@ -31,6 +31,67 @@
             {%endfor%}
 
 
+            
+                   
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+
+
+                    {% if page_obj.has_previous %} 
+
+                        <li class="page-item">
+
+                            <a class="page-link" href="?page=1" aria-label="First">
+                                <span aria-hidden="true">&laquo; First </span>
+                                
+                            
+                            </a>
+                            
+                        </li>
+                        <li class="page-item">
+
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">previous </span>
+                                
+                            
+                            </a>
+                            
+                        </li>
+                    {% endif %}
+
+                    <li class="page-item">
+
+                        <a class="page-link" aria-label="Page">
+                            <span class="current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+                        </a>
+                    </li>
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">Next </span>
+                                
+                            
+                            </a>
+                            
+                        </li>
+                        <li class="page-item">
+
+                            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                                <span aria-hidden="true">Last &raquo; </span>
+                                
+                            
+                            </a>
+                            
+                        </li>
+                    {% endif %}
+
+                  
+                </ul>
+              </nav>
             <!--coment>
                         <div class="col-sm">
                             <div class="card">
@@ -67,5 +128,4 @@
     </div>
 
 </section>
-</div>
 {% endblock %}

@@ -7,13 +7,16 @@ from apps.buscador.models import sqlserverconn
 from apps.buscador.models import Localidad
 from apps.buscador.models import Especialidad
 import pyodbc
-
+from .forms import InputForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
     return render(request, "home.html", {})
 
 def login(request):
-    return render(request, "login.html", {})
+    context={}
+    context['form']=InputForm()
+    return render(request, "login.html", context)
 
 def registrate(request):
     return render(request, "registrate.html", {})
@@ -85,7 +88,17 @@ def resultadosBusq(request):
     
 
     result=cursor2.fetchall()
-    return render(request,'resultadosBusq.html',{'sqlserverconn':result})
+    paginator = Paginator(result, 6)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
+    try:
+        prest = paginator.page(page)
+    except PageNotAnInteger:
+        prest = paginator.page(1)
+    except EmptyPage:
+        prest = paginator.page(paginator.num_pages)
+
+    return render(request,'resultadosBusq.html',{'page_obj':page_obj,'sqlserverconn':prest})
     #return render(request, "resultadosBusq.html", {})
 
 def perfilPOL(request):
@@ -97,6 +110,5 @@ def miLista(request):
 
 def base(request):
     return render(request, "base.html")
-
 
 

@@ -19,9 +19,11 @@ from apps.buscador import views
 from  django.views.generic.base  import  TemplateView 
 from MyPol import views
 
+from MyPol.forms import LoginForm
+
 urlpatterns = [
     path('',views.home, name='home'),
-    path('login/',views.login, name='login'),
+    path('login/',views.login, name="login"),
     path('admin/', admin.site.urls),
     path('recuperar/',views.recuperar, name='recuperar'),
     path('encontraTuPol/',views.encontraTuPol, name='encontraTuPol'),

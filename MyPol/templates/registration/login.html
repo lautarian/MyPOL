@@ -114,11 +114,15 @@
                     <div id="login-row" class="row justify-content-center align-items-center">
                         <div id="login-column" class="col-md-6">
                             <div id="login-box" class="col-md-12 mt-2">
-                                <form id="login-form" class="form" action="" method="post">
-                                    {% csrf_token %}
+                                <form id="login-form" class="form text-center" action="" method="post">
                                     
+                                    
+                                    {% csrf_token %}
+                                        
                                     {{ form.as_p }}
                                     
+                                    
+                                        
                                     <div class="form-group d-flex justify-content-between mb-3">
                                         <label for="remember-me"  class="text-info text-dark"><span>Mantenerme conectado</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                         <div id="forgot-password" class="text-right ">
