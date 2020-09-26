@@ -77,13 +77,23 @@ WSGI_APPLICATION = 'MyPol.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'MyPol',
+        'USER': 'Administrador',
+        'PASSWORD': 'Info+2020',
+        'HOST': 'mypol.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    
+                }      
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 

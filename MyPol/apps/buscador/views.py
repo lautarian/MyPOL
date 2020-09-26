@@ -3,17 +3,18 @@ from django.http import HttpResponse
 from .models import sqlserverconn
 from .models import Localidad
 from .models import Especialidad
-import pyodbc
+
+from django.db import connection
 
 # Create your views here.
 
 def connsql(request):
-    conn=pyodbc.connect('Driver={sql server};'
+    """ conn=pyodbc.connect('Driver={sql server};'
                         'Server=mypol.database.windows.net;'
                         'Database=MyPol;'
                         'UID=Administrador;'
-                        'PWD=Info+2020')
-    cursor=conn.cursor()
+                        'PWD=Info+2020') """
+    cursor=connection.cursor()
     cursor.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
     " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
     "  FROM [dbo].[Prestador] Pres "
@@ -33,15 +34,15 @@ def connsql(request):
     """return render(request,'index.html',{'sqlserverconn':result}) """
 
     # Cargo Localidades
-    cursor2=conn.cursor()
-    cursor2.execute("SELECT DISTINCT TOP (100) PERCENT id_localidad, nombreLocalidad AS NLoca "
-                    "FROM            dbo.Localidad order by nombrelocalidad")    
+    cursor2=connection.cursor()
+    cursor2.execute("SELECT DISTINCT TOP (100) PERCENT id, nombreLocalidad AS NLoca "
+                    "FROM            dbo.buscador_Localidad order by nombrelocalidad")    
     result2=cursor2.fetchall()
     
     # Cargo Especialidades
-    cursor3=conn.cursor()
-    cursor3.execute("SELECT DISTINCT TOP (100) PERCENT id_especialidad, nombreEspecialidad AS NEspe "
-                    "FROM            dbo.Especialidad order by nombreEspecialidad")    
+    cursor3=connection.cursor()
+    cursor3.execute("SELECT DISTINCT TOP (100) PERCENT id, nombreEspecialidad AS NEspe "
+                    "FROM            dbo.buscador_Especialidad order by nombreEspecialidad")    
     result3=cursor3.fetchall()
     
     

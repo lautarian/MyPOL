@@ -3,12 +3,14 @@ from django.shortcuts import render
 import datetime
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from apps.buscador.models import sqlserverconn
+""" from apps.buscador.models import sqlserverconn
 from apps.buscador.models import Localidad
-from apps.buscador.models import Especialidad
+from apps.buscador.models import  Especialidad """
+from apps.buscador.views import  *
 import pyodbc
 from .forms import InputForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db import connection
 
 def home(request):
     return render(request, "home.html", {})
@@ -25,12 +27,12 @@ def recuperar(request):
     return render(request, "recuperar.html", {})
 
 def encontraTuPol(request):
-    conn=pyodbc.connect('Driver={sql server};'
+    """ conn=pyodbc.connect('Driver={sql server};'
                         'Server=tcp:mypol.database.windows.net;'
                         'Database=MyPol;'
                         'UID=Administrador;'
                         'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
-    cursor=conn.cursor()
+    cursor=connection.cursor()
     cursor.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
     " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
     "  FROM [dbo].[Prestador] Pres "
@@ -43,27 +45,27 @@ def encontraTuPol(request):
     " LEFT JOIN dbo.Provincia Prov  "
     " on Prov.id_provincia = Dir.id_provincia "
     " LEFT JOIN  dbo.Localidad Loc "
-    " on Loc.id_localidad = Dir.id_localidad ")
+    " on Loc.id_localidad = Dir.id_localidad ")"""
     
 
-    result=cursor.fetchall()
-    """return render(request,'index.html',{'sqlserverconn':result}) """
+ #   result=cursor.fetchall()
+#   return render(request,'index.html',{'sqlserverconn':result}) 
 
     # Cargo Localidades
-    cursor2=conn.cursor()
-    cursor2.execute("SELECT DISTINCT TOP (100) PERCENT id_localidad, nombreLocalidad AS NLoca "
-                    "FROM            dbo.Localidad order by nombrelocalidad")    
+    cursor2=connection.cursor()
+    cursor2.execute("SELECT DISTINCT TOP (100) PERCENT id, nombreLocalidad AS NLoca "
+                    "FROM            dbo.buscador_localidad order by nombrelocalidad")    
     result2=cursor2.fetchall()
     
     # Cargo Especialidades
-    cursor3=conn.cursor()
-    cursor3.execute("SELECT DISTINCT TOP (100) PERCENT id_especialidad, nombreEspecialidad AS NEspe "
-                    "FROM            dbo.Especialidad order by nombreEspecialidad")    
+    cursor3=connection.cursor()
+    cursor3.execute("SELECT DISTINCT TOP (100) PERCENT  id, nombreEspecialidad AS NEspe "
+                    "FROM            dbo.buscador_especialidad order by nombreEspecialidad")    
     result3=cursor3.fetchall()
     
     
     
-    return render(request,'encontraTuPol.html',{'sqlserverconn':result, 'Localidad':result2, 'Especialidad':result3})
+    return render(request,'encontraTuPol.html',{'Localidad':result2, 'Especialidad':result3})
 
 def resultadosBusq(request):
     conn2=pyodbc.connect('Driver={sql server};'
@@ -71,7 +73,7 @@ def resultadosBusq(request):
                         'Database=MyPol;'
                         'UID=Administrador;'
                         'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
-    cursor2=conn2.cursor()
+    cursor2=connection.cursor()
     cursor2.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
     " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
     "  FROM [dbo].[Prestador] Pres "

@@ -14,7 +14,8 @@
                         <select class="form-control" id="Especialidad">
                             <option>-ELIJA UNA ESPECIALIDAD-</option>
                             {%for datadisplay in Especialidad %}
-                            <option value={{datadisplay.NEspe}}>{{datadisplay.NEspe}}</option>
+                                
+                            <option value={{datadisplay.0}}>{{datadisplay.1}}</option>
                             {%endfor%}
                         </select>
                     </div>
@@ -45,7 +46,7 @@
                         <select class="form-control " id="exampleFormControlSelect1">
                             <option>-ELIJA UNA LOCALIDAD-</option>
                             {%for datadisplay in Localidad %}
-                            <option value={{datadisplay.NEspe}}>{{datadisplay.NLoca}}</option>
+                            <option value={{datadisplay.0}}>{{datadisplay.1}}</option>
                             {%endfor%}
                         </select>
                     </div>
