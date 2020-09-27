@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 import datetime
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 """ from apps.buscador.models import sqlserverconn
 from apps.buscador.models import Localidad
@@ -11,6 +11,10 @@ import pyodbc
 from .forms import InputForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import connection
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
+
 
 def home(request):
     return render(request, "home.html", {})
@@ -26,6 +30,7 @@ def registrate(request):
 def recuperar(request):
     return render(request, "recuperar.html", {})
 
+@login_required
 def encontraTuPol(request):
     """ conn=pyodbc.connect('Driver={sql server};'
                         'Server=tcp:mypol.database.windows.net;'
@@ -67,6 +72,7 @@ def encontraTuPol(request):
     
     return render(request,'encontraTuPol.html',{'Localidad':result2, 'Especialidad':result3})
 
+@login_required
 def resultadosBusq(request):
     parametro= request.GET.get("Fespe")
     print(parametro)
@@ -83,7 +89,7 @@ def resultadosBusq(request):
     " LEFT JOIN dbo.Provincia Prov  "
     " on Prov.id_provincia = Dir.id_provincia "
     " LEFT JOIN  dbo.Localidad Loc "
-    " on Loc.id_localidad = Dir.id_localidad where Pres.id_especialidad =1")
+    " on Loc.id_localidad = Dir.id_localidad ")
     
 
     result=cursor2.fetchall()
@@ -100,14 +106,21 @@ def resultadosBusq(request):
     return render(request,'resultadosBusq.html',{'page_obj':page_obj,'sqlserverconn':prest})
     #return render(request, "resultadosBusq.html", {})
 
+@login_required
 def perfilPOL(request):
     return render(request, "perfilPOL.html", {})
 
+@login_required
 def miLista(request):
     return render(request, "miLista.html", {})
 
 
 def base(request):
     return render(request, "base.html")
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
 
 
