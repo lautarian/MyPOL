@@ -70,6 +70,7 @@
         .bottom .copyright p, .bottom .copyright a:hover{
             color: #0b7a68da;
         }
+        
     </style>
     <title>MyPOL-Mi Prestador Online</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}"
@@ -106,28 +107,66 @@
     <body>  
         <section class="expand-lg pantallas">
             <div id="login">
-                <h2 class="text-center text-white pt-5 mb-2 "> Registrate </h2>
-                <div class="container">
-                    <div id="login-row" class="row justify-content-center align-items-center">
-                        <div id="login-column" class="col-md-6">
-                            <div id="login-box" class="col-md-12 mt-2">
-                                <form id="login-form" class="form" action="" method="post">
-
-                                    
-
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
-                                    
-                                    <div class="form-group d-flex justify-content-center mt-3">
-
-                                        <button type="submit" class="btn btn-info btn-lg ">SIGN UP</button>
-                                    </div>
-                                </form>
-                            </div>
+                <h2 class="text-center text-white pt-5 mb-2 "> Registrate </h2> </div>
+             <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="text-center col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input type="text" class="form-control" name="first_name">
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label>Apellido:</label>
+                            <input type="text" class="form-control" name="last_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label>Nombre de usuario:</label>
+                            <input type="text" class="form-control" name="username">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label>Correo:</label>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label>Contraseña:</label>
+                            <input type="text" class="password" name="password1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label>Confirmar contraseña:</label>
+                            <input type="text" class="password" name="password2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+             </form>
+                
     
         </section>
     </div>
