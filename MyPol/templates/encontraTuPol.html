@@ -25,7 +25,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="form-control" id="Especialidad">
+                        <select class="form-control" id="Especialidad" onchange="guardarVariable()">
                             <option>-ELIJA UNA ESPECIALIDAD-</option>
                             {%for datadisplay in Especialidad %}
                                 
@@ -79,6 +79,14 @@
         </div>
 
     </div>
-
+    <script>
+        // Select the contents of a text field with id="myText"
+        function guardarVariable() {
+            var x = document.getElementById("Especialidad").value
+            alert(x)
+            //request.session['Especialidad']= x
+        }
+    </script>    
 </section>
+
 {% endblock %}

@@ -68,11 +68,8 @@ def encontraTuPol(request):
     return render(request,'encontraTuPol.html',{'Localidad':result2, 'Especialidad':result3})
 
 def resultadosBusq(request):
-    conn2=pyodbc.connect('Driver={sql server};'
-                        'Server=tcp:mypol.database.windows.net;'
-                        'Database=MyPol;'
-                        'UID=Administrador;'
-                        'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+    parametro= request.GET.get("Fespe")
+    print(parametro)
     cursor2=connection.cursor()
     cursor2.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
     " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
@@ -86,7 +83,7 @@ def resultadosBusq(request):
     " LEFT JOIN dbo.Provincia Prov  "
     " on Prov.id_provincia = Dir.id_provincia "
     " LEFT JOIN  dbo.Localidad Loc "
-    " on Loc.id_localidad = Dir.id_localidad ")
+    " on Loc.id_localidad = Dir.id_localidad where Pres.id_especialidad =1")
     
 
     result=cursor2.fetchall()
