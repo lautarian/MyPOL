@@ -24,16 +24,16 @@
         <!--ACA VAN LAS TARJETAS DE LOS DOCTORES CON SUS DETALLES-->
         <div id="results-row" class="row d-flex justify-content-around">
 
-            {%for datadisplay in sqlserverconn%}
+            {%for resultados in page_obj %}
             <div class="col-sm-4 ">
                 <div class="card">
                     <div class="card-block block-1">
                         <div class="card-body">
-                            <h3 class="card-title">{{datadisplay.0}}</h3>
-                            <p class="card-text">Especialidad: {{datadisplay.1}}</br>Obra Social:
-                                INSSSEP</br>Localidad: {{datadisplay.4}}</p>
+                            <h3 class="card-title">{{resultados.nombrePrestador}}</h3>
+                            <p class="card-text">Especialidad: {{resultados.nombreEspecialidad}}</br>Obra Social:
+                                INSSSEP</br>Localidad: {{resultados.localidadPrestador}}</p>
                             <a href="/perfilPOL" title="Ver info" class="read-more">Ver
-                                mas info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                más info<i class="fa fa-angle-double-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>
