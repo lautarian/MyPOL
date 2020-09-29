@@ -27,9 +27,9 @@
                         </br>
                         <select class="form-control" id="Especialidad" onchange="guardarVariable()">
                             <option>-ELIJA UNA ESPECIALIDAD-</option>
-                            {%for datadisplay in Especialidad %}
+                            {%for especialidad in especialidad %}
                                 
-                            <option value={{datadisplay.0}}>{{datadisplay.1}}</option>
+                            <option value={{especialidad.id}}>{{especialidad.nombreEspecialidad}}</option>
                             {%endfor%}
                         </select>
                     </div>
@@ -59,8 +59,8 @@
                         </br>
                         <select class="form-control " id="exampleFormControlSelect1">
                             <option>-ELIJA UNA LOCALIDAD-</option>
-                            {%for datadisplay in Localidad %}
-                            <option value={{datadisplay.0}}>{{datadisplay.1}}</option>
+                            {%for localidad in localidad %}
+                            <option value={{localidad.id}}>{{localidad.nombreLocalidad}}</option>
                             {%endfor%}
                         </select>
                     </div>

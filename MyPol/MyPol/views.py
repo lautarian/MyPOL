@@ -3,10 +3,9 @@ from django.shortcuts import render
 import datetime
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-""" from apps.buscador.models import sqlserverconn
-from apps.buscador.models import Localidad
-from apps.buscador.models import  Especialidad """
-from apps.buscador.views import  *
+
+from apps.buscador.models import  Localidad, Especialidad, sqlserverconn
+
 import pyodbc
 from .forms import InputForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -32,68 +31,25 @@ def recuperar(request):
 
 @login_required
 def encontraTuPol(request):
-    """ conn=pyodbc.connect('Driver={sql server};'
-                        'Server=tcp:mypol.database.windows.net;'
-                        'Database=MyPol;'
-                        'UID=Administrador;'
-                        'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
-    cursor=connection.cursor()
-    cursor.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
-    " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
-    "  FROM [dbo].[Prestador] Pres "
-    " LEFT JOIN dbo.Especialidad Esp "
-    " on Esp.id_especialidad=Pres.id_especialidad "
-    " LEFT JOIN dbo.Direccion Dir "
-    " on Dir.id_prestador=Pres.id_prestador "
-    " LEFT JOIN dbo.TelefonoPrestador Tel "
-    " on tel.id_prestador=pres.id_prestador "
-    " LEFT JOIN dbo.Provincia Prov  "
-    " on Prov.id_provincia = Dir.id_provincia "
-    " LEFT JOIN  dbo.Localidad Loc "
-    " on Loc.id_localidad = Dir.id_localidad ")"""
-    
-
- #   result=cursor.fetchall()
-#   return render(request,'index.html',{'sqlserverconn':result}) 
 
     # Cargo Localidades
-    cursor2=connection.cursor()
-    cursor2.execute("SELECT DISTINCT TOP (100) PERCENT id, nombreLocalidad AS NLoca "
-                    "FROM            dbo.buscador_localidad order by nombrelocalidad")    
-    result2=cursor2.fetchall()
+    localidad = Localidad.objects.all()
+    especialidad=Especialidad.objects.all()
+    context={
+        'localidad':localidad,
+        'especialidad':especialidad
+    }    
     
-    # Cargo Especialidades
-    cursor3=connection.cursor()
-    cursor3.execute("SELECT DISTINCT TOP (100) PERCENT  id, nombreEspecialidad AS NEspe "
-                    "FROM            dbo.buscador_especialidad order by nombreEspecialidad")    
-    result3=cursor3.fetchall()
-    
-    
-    
-    return render(request,'encontraTuPol.html',{'Localidad':result2, 'Especialidad':result3})
+    return render(request,'encontraTuPol.html',context)
 
 @login_required
 def resultadosBusq(request):
-    parametro= request.GET.get("Fespe")
-    print(parametro)
-    cursor2=connection.cursor()
-    cursor2.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
-    " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
-    "  FROM [dbo].[Prestador] Pres "
-    " LEFT JOIN dbo.Especialidad Esp "
-    " on Esp.id_especialidad=Pres.id_especialidad "
-    " LEFT JOIN dbo.Direccion Dir "
-    " on Dir.id_prestador=Pres.id_prestador "
-    " LEFT JOIN dbo.TelefonoPrestador Tel "
-    " on tel.id_prestador=pres.id_prestador "
-    " LEFT JOIN dbo.Provincia Prov  "
-    " on Prov.id_provincia = Dir.id_provincia "
-    " LEFT JOIN  dbo.Localidad Loc "
-    " on Loc.id_localidad = Dir.id_localidad ")
-    
+    resultados= sqlserverconn.objects.all()
+    contexto2={
+        'resultados':resultados
+    }    
 
-    result=cursor2.fetchall()
-    paginator = Paginator(result, 6)
+    paginator = Paginator(resultados, 6)
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)
     try:
@@ -102,8 +58,14 @@ def resultadosBusq(request):
         prest = paginator.page(1)
     except EmptyPage:
         prest = paginator.page(paginator.num_pages)
+    context={
+        
+         
+        
+        'page_obj':page_obj
+    }
 
-    return render(request,'resultadosBusq.html',{'page_obj':page_obj,'sqlserverconn':prest})
+    return render(request,'resultadosBusq.html',context)
     #return render(request, "resultadosBusq.html", {})
 
 @login_required
