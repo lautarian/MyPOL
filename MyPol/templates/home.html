@@ -79,11 +79,18 @@
   <body>
     <!--parte inicial de presentacion, PANTALLA 1-->
     <section class="container-fluid slider d-flex justify-content-center align-items-center" id="principal">
-        <div class="container d-flex justify-content-center ">
-            <a class="" href="/accounts/login/"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
-            
-        </div>
+        {% if user.is_authenticated %}
+            <div class="container d-flex justify-content-center ">
+                <a class="" href="/encontraTuPol"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
+                
+            </div>
         
+        {% else %}
+            <div class="container d-flex justify-content-center ">
+                <a class="" href="/accounts/login/"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
+                
+            </div>
+        {% endif %}
     </section>
 
     <!-- Optional JavaScript -->

@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 import datetime
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 """ from apps.buscador.models import sqlserverconn
 from apps.buscador.models import Localidad
@@ -11,6 +11,10 @@ import pyodbc
 from .forms import InputForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import connection
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
+
 
 def home(request):
     return render(request, "home.html", {})
@@ -26,6 +30,7 @@ def registrate(request):
 def recuperar(request):
     return render(request, "recuperar.html", {})
 
+@login_required
 def encontraTuPol(request):
     """ conn=pyodbc.connect('Driver={sql server};'
                         'Server=tcp:mypol.database.windows.net;'
@@ -67,12 +72,10 @@ def encontraTuPol(request):
     
     return render(request,'encontraTuPol.html',{'Localidad':result2, 'Especialidad':result3})
 
+@login_required
 def resultadosBusq(request):
-    conn2=pyodbc.connect('Driver={sql server};'
-                        'Server=tcp:mypol.database.windows.net;'
-                        'Database=MyPol;'
-                        'UID=Administrador;'
-                        'PWD=Info+2020;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+    parametro= request.GET.get("Fespe")
+    print(parametro)
     cursor2=connection.cursor()
     cursor2.execute("SELECT [nombrePrestador], Esp.nombreEspecialidad, dir.direccion, "
     " Tel.prestadorTelefono, Loc.nombreLocalidad, Prov.nombreProvincia "
@@ -103,14 +106,21 @@ def resultadosBusq(request):
     return render(request,'resultadosBusq.html',{'page_obj':page_obj,'sqlserverconn':prest})
     #return render(request, "resultadosBusq.html", {})
 
+@login_required
 def perfilPOL(request):
     return render(request, "perfilPOL.html", {})
 
+@login_required
 def miLista(request):
     return render(request, "miLista.html", {})
 
 
 def base(request):
     return render(request, "base.html")
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
 
 

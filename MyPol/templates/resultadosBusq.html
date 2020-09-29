@@ -17,7 +17,7 @@
 {% block content %}
 <section class="expand-lg pantallas">
     <div id="busqueda">
-        <h1 class="text-center text-info pt-5 mb-2 "></br>Resultados de la busqueda</h1>
+        <h1 class="text-center text-info pt-5 mb-2 "></br>Resultados de la búsqueda</h1>
 
 
         </br></br></br>
@@ -29,9 +29,9 @@
                 <div class="card">
                     <div class="card-block block-1">
                         <div class="card-body">
-                            <h3 class="card-title">{{datadisplay.nombrePrestador}}</h3>
-                            <p class="card-text">Especialidad: {{datadisplay.nombreEspecialidad}}</br>Obra Social:
-                                INSSSEP</br>Localidad: {{datadisplay.nombreLocalidad}}</p>
+                            <h3 class="card-title">{{datadisplay.0}}</h3>
+                            <p class="card-text">Especialidad: {{datadisplay.1}}</br>Obra Social:
+                                INSSSEP</br>Localidad: {{datadisplay.4}}</p>
                             <a href="/perfilPOL" title="Ver info" class="read-more">Ver
                                 mas info<i class="fa fa-angle-double-right ml-2"></i></a>
                         </div>
@@ -52,7 +52,7 @@
                         <li class="page-item">
 
                             <a class="page-link" href="?page=1" aria-label="First">
-                                <span aria-hidden="true">&laquo; First </span>
+                                <span aria-hidden="true">&laquo; Primero </span>
                                 
                             
                             </a>
@@ -61,7 +61,7 @@
                         <li class="page-item">
 
                             <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                                <span aria-hidden="true">previous </span>
+                                <span aria-hidden="true">Anterior </span>
                                 
                             
                             </a>
@@ -73,7 +73,7 @@
 
                         <a class="page-link" aria-label="Page">
                             <span class="current">
-                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
                             </span>
                         </a>
                     </li>
@@ -82,7 +82,7 @@
                         <li class="page-item">
 
                             <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                                <span aria-hidden="true">Next </span>
+                                <span aria-hidden="true">Siguiente</span>
                                 
                             
                             </a>
@@ -91,7 +91,7 @@
                         <li class="page-item">
 
                             <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
-                                <span aria-hidden="true">Last &raquo; </span>
+                                <span aria-hidden="true">Último&raquo; </span>
                                 
                             
                             </a>
