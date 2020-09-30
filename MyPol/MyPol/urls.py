@@ -28,7 +28,7 @@ urlpatterns = [
     path('recuperar/',views.recuperar, name='recuperar'),
     path('encontraTuPol/',views.encontraTuPol, name='encontraTuPol'),
     path('resultadosBusq/',views.resultadosBusq, name='resultadosBusq'),
-    path('perfilPOL/',views.perfilPOL, name='perfilPOL'),
+    path('<int:id>/',views.perfilPOL, name='perfilPOL'),
     path('miLista/',views.miLista, name='miLista'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('base/',views.base, name='base'),

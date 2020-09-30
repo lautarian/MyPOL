@@ -18,3 +18,4 @@ class PrestList(ListView):
     paginate_by = 2
     model = sqlserverconn
 
+

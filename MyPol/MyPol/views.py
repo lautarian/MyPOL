@@ -69,8 +69,13 @@ def resultadosBusq(request):
     #return render(request, "resultadosBusq.html", {})
 
 @login_required
-def perfilPOL(request):
-    return render(request, "perfilPOL.html", {})
+def perfilPOL(request, id):
+    prestador=sqlserverconn.objects.get(id= id)
+    context={
+        'prestador':prestador
+    }
+    #return render(request, 'project_detail.html',context)
+    return render(request, "perfilPOL.html", context)
 
 @login_required
 def miLista(request):

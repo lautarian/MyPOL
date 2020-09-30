@@ -223,7 +223,7 @@
                                         <h3 class="card-title">{{resultados.nombrePrestador}}</h3>
                                         <p class="opciones card-text">Especialidad: {{resultados.nombreEspecialidad}}</br>Obra Social:
                                             INSSSEP</br>Localidad: {{resultados.localidadPrestador}}</p>
-                                        <a href="/perfilPOL" title="Ver info" class="read-more">Ver
+                                        <a href="{% url 'perfilPOL' resultados.id %}" title="Ver info" class="read-more">Ver
                                             más info<i class="fa fa-angle-double-right ml-2"></i></a>
                                     </div>
                                 </div>
