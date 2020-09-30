@@ -71,6 +71,16 @@
             color: #0b7a68da;
         }
         
+        .form-group button {
+            font-family: 'Raleway';
+        }
+        .subtitulo h2{
+            font-family: 'Raleway';
+            font-weight: bold;
+        }
+        .opciones{
+            font-family:'Roboto';
+        }
     </style>
     <title>MyPOL-Mi Prestador Online</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}"
@@ -106,7 +116,7 @@
 
     <body>  
         <section class="expand-lg pantallas">
-            <div id="login">
+            <div class="subtitulo" id="login">
                 <h2 class="text-center text-white pt-5 mb-2 "> Registrate </h2> </div>
                 <div class="container">
                     <div id="login-row" class="row justify-content-center align-items-center">
@@ -117,39 +127,39 @@
                                     
                                     <div class="form-group mt-3 mb-3">
                                         
-                                        <input type="text" class="form-control" placeholder="Nombre" name="first_name">
+                                        <input type="text" class="opciones form-control" placeholder="Nombre" name="first_name">
                                     </div>
                                     
                                     
                                     <div class="form-group mt-3 mb-3">
                                         
-                                        <input type="text" class="form-control" placeholder="Apellido" name="last_name">
+                                        <input type="text" class="opciones form-control" placeholder="Apellido" name="last_name">
                                     </div>
                                     
                                     
                                     <div class="form-group mt-3 mb-3">
                                         
-                                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="username">
+                                        <input type="text" class="opciones form-control" placeholder="Nombre de usuario" name="username">
                                     </div>
                                     
                                     
                                     <div class="form-group mt-3 mb-3">
                                         
-                                        <input type="text" class="form-control" placeholder="EMAIL" name="email">
+                                        <input type="text" class="opciones form-control" placeholder="EMAIL" name="email">
                                     </div>
                                     
                                     
                                     <div class="form-group d-flex justify-content-between mt-3 mb-3">
                                        
-                                        <input type="text" class="password" placeholder="Password 1" name="password1">
-                                        <label>Ingrese su contraseña</label>
+                                        <input type="text" class="opciones password" placeholder="Password 1" name="password1">
+                                        <label class="opciones">Ingrese su contraseña</label>
                                     </div>
                                     
                                     
                                     <div class="form-group d-flex justify-content-between mt-3 mb-3">
                                         
-                                        <input type="text" class="password" placeholder="Password 2" name="password2">
-                                        <label>Confirmar contraseña</label>
+                                        <input type="text" class="opciones password" placeholder="Password 2" name="password2">
+                                        <label class="opciones">Confirmar contraseña</label>
                                     </div>
                                     <div class="form-group justify-content-between mb-3">
                                         </br>

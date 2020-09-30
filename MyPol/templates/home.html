@@ -70,6 +70,12 @@
             color: #0b7a68da;
         }
 
+        .iniciar {
+            font-family: 'Raleway';
+        }
+
+
+        
     </style>
     <title>MyPOL-Mi Prestador Online</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}"
@@ -81,13 +87,13 @@
     <section class="container-fluid slider d-flex justify-content-center align-items-center" id="principal">
         {% if user.is_authenticated %}
             <div class="container d-flex justify-content-center ">
-                <a class="" href="/encontraTuPol"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
+                <a class="iniciar" href="/encontraTuPol"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
                 
             </div>
         
         {% else %}
             <div class="container d-flex justify-content-center ">
-                <a class="" href="/accounts/login/"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
+                <a class="iniciar" href="/accounts/login/"><button type="button" class="btn btn-outline-info btn-lg bg-light">INGRESAR</button></a>
                 
             </div>
         {% endif %}

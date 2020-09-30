@@ -17,7 +17,7 @@
 {% block content %}
 
 <section class="expand-lg pantallas">
-    <div id="busqueda">
+    <div class="subtitulo" id="busqueda">
         <h1 class="text-center text-info pt-5 mb-2 "></br>Tu prestador</h1>
         <div class="container-fluid">
 
@@ -28,11 +28,11 @@
                 <div class="card text-white bg-info mb-3" style="width: 28rem;">
                     <div class="card-block tarjet block-1">
                         <h3 class="card-title">Nombre y Apellido</h3>
-                        <p class="card-text">Especialidad:</p>
-                        <p class="card-text">Obra Social:</p>
-                        <p class="card-text">Localidad:</p>
-                        <p class="card-text">Direccion:</p>
-                        <p class="card-text">Numeros de contacto:</p>
+                        <p class="opciones card-text">Especialidad:</p>
+                        <p class="opciones card-text">Obra Social:</p>
+                        <p class="opciones card-text">Localidad:</p>
+                        <p class="opciones card-text">Direccion:</p>
+                        <p class="opciones card-text">Numeros de contacto:</p>
 
 
                         <a href="https://www.fiverr.com/share/qb8D02" title="Guardar como favorito"
@@ -49,3 +49,22 @@
 </div>
 {% endblock %}
 
+
+
+{% block footer %}
+
+<div class="footer page-footer linea1">
+    <div class="bottom section-padding">
+        <div class="container linea1">
+            <div class="row linea1">
+                <div class="col-md-12 text-center linea1">
+                    <div class="copyright">
+                        <p>© <span>2020</span> <a href="#" class="transition">MyPOL-Org  -  Informatorio</a> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

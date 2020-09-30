@@ -18,14 +18,14 @@
 
 {% block content %}
 <section class="expand-lg pantallas">
-    <div id="busqueda">
+    <div class="subtitulo" id="busqueda">
         <h1 class="text-center text-info pt-5 mb-2 "></br>Encontrá tu prestador</h1>
         <div class="container">
             <div id="options-row" class="row d-flex justify-content-around ">
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="form-control" id="Especialidad" onchange="guardarVariable()">
+                        <select class="opciones form-control" id="Especialidad" onchange="guardarVariable()">
                             <option>-ELIJA UNA ESPECIALIDAD-</option>
                             {%for especialidad in especialidad %}
                                 
@@ -38,7 +38,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="opciones form-control" id="exampleFormControlSelect1">
                             <option>-ELIJA UNA OBRA SOCIAL-</option>
                             <option>Insssep</option>
                         </select>
@@ -47,7 +47,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="opciones form-control" id="exampleFormControlSelect1">
                             <option>-ELIJA UNA PROVINCIA-</option>
                             <option>Chaco</option>
                         </select>
@@ -57,7 +57,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="form-control " id="exampleFormControlSelect1">
+                        <select class="opciones form-control " id="exampleFormControlSelect1">
                             <option>-ELIJA UNA LOCALIDAD-</option>
                             {%for localidad in localidad %}
                             <option value={{localidad.id}}>{{localidad.nombreLocalidad}}</option>
@@ -88,5 +88,25 @@
         }
     </script>    
 </section>
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+    <div class="footer page-footer linea1">
+        <div class="bottom section-padding">
+            <div class="container linea1">
+                <div class="row linea1">
+                    <div class="col-md-12 text-center linea1">
+                        <div class="copyright">
+                            <p>© <span>2020</span> <a href="#" class="transition">MyPOL-Org  -  Informatorio</a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
