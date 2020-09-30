@@ -70,9 +70,9 @@ def resultadosBusq(request):
 
 @login_required
 def perfilPOL(request, id):
-    prestador=sqlserverconn.objects.get(id= id)
+    resultados=sqlserverconn.objects.get(id= id)
     context={
-        'prestador':prestador
+        'resultados':resultados
     }
     #return render(request, 'project_detail.html',context)
     return render(request, "perfilPOL.html", context)
