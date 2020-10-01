@@ -1,5 +1,6 @@
 from django.db import models
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -11,6 +12,8 @@ class sqlserverconn(models.Model):
     localidadPrestador=models.CharField(max_length=50)
     provinciaPrestador= models.CharField(max_length=50)
     
+
+
 class Localidad(models.Model):
     idLocalidad=models.IntegerField()
     nombreLocalidad=models.CharField(max_length=50)

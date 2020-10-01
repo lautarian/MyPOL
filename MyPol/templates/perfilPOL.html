@@ -34,9 +34,17 @@
                         <p class="opciones card-text">Direccion: {{resultados.direccionPrestador}}</p>
                         <p class="opciones card-text">Numeros de contacto: {{resultados.telefonoPrestador}}</p>
 
-
-                        <a href="#" title="Guardar como favorito"
-                            class="read-more">Añadir a Mi Lista<i class="fas fa-star ml-2"></i></a>
+                        <a  href="{% url 'addFav' resultados.id %}"  title="Guardar como favorito"
+                            class="read-more">Añadir a Mi Lista<i class="fas fa-star ml-2"></i>
+                        </a>
+                        
+                        
+                        <!--<form method='POST' action="{% url 'addFav' resultados.id %}">
+                            {% csrf_token %}
+                            <input type='hidden' name='resultados' value={{resultados.id}}>
+                            <button type='submit'>añadir a mi lista</button>
+                        </form>-->
+                        
                     </div>
                 </div>
             </div>

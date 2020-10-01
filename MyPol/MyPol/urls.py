@@ -21,6 +21,8 @@ from MyPol import views
 
 from MyPol.forms import LoginForm
 
+app_name = 'foobar'
+
 urlpatterns = [
     path('',views.home, name='home'),
     path('login/',views.login, name="login"),
@@ -29,6 +31,7 @@ urlpatterns = [
     path('encontraTuPol/',views.encontraTuPol, name='encontraTuPol'),
     path('resultadosBusq/',views.resultadosBusq, name='resultadosBusq'),
     path('<int:id>/',views.perfilPOL, name='perfilPOL'),
+    path('<int:id>/addFav',views.addFav, name="addFav"),
     path('miLista/',views.miLista, name='miLista'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('base/',views.base, name='base'),

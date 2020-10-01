@@ -1,40 +1,277 @@
 <!--RECORDAR MODIFICAR ENLACES A PANTALLA PRINCIPAL, YA QUE CAMBIAN LOS NOMBRES DE LOS ARCHIVOS Y DEMAS-->
-{% extends 'base.html' %}
+
 {% load static %}
 
 
+<!--RECORDAR MODIFICAR ENLACES A PANTALLA PRINCIPAL, YA QUE CAMBIAN LOS NOMBRES DE LOS ARCHIVOS Y DEMAS-->
+{% load static %}
 
-{% block nav %}
-<a href="/encontraTuPol">
-    <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-    </svg>
-</a>
-{% endblock %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <script src="https://kit.fontawesome.com/ab85804bba.js" crossorigin="anonymous"></script>
+
+    <!--Estilos en Css-->
+    <style>
+        .slider{
+            background: url("{% static 'images/Fondo_Inicio_Logo.png' %}");
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .container{
+            margin-bottom: -30rem;
+        }
+        .section{
+            background: url("{% static 'images/barra.png' %}");
+            background-size: cover;
+            background-position: center;
+        }
+        .cuerpo{
+            background: url("{% static 'images/Fondo_Cruces.png' %}");
+            height:auto;
+            background-size: cover;
+            background-position: center;
+            margin-top: 0mm;
+
+        }
+        .registro{
+            margin-top:5rem;
+        }
+
+        .card{
+        padding: 1rem!important;
+        border: none;
+        margin-bottom:1rem;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+        }
+        .card:hover{
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+        .card .card-block{
+        padding-left: 50px;
+        position: relative;
+        }
+        .card .card-block a{
+        color: #21967bde !important;
+        font-weight:700;
+        text-decoration:none;
+        }
+
+        .card .tarjet a{
+        color: #b3f1e3e0 !important;
+        font-weight:700;
+        text-decoration:none;
+        }
+        
+        .card .card-block a i{
+        display:none;
+        
+        }
+        .card:hover .card-block a i{
+        display:inline-block;
+        font-weight:700;
+        
+        }
+        .card .card-block:before{
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 39px;
+        color: #46c7a9e3;
+        left: 0;
+        -webkit-transition: -webkit-transform .2s ease-in-out;
+        transition:transform .2s ease-in-out;
+        }
+        .card .block-1:before{
+            content: "\f0f0";
+        }
+        .card .block-2:before{
+            content: "\f0f1";
+        }
+        .card .block-3:before{
+            content: "\f0f0";
+        }
+        .card .block-4:before{
+            content: "\f0f1";
+        }
+        
+        .card:hover .card-block:before{
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);	
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
 
 
 
-{% block content %}
+        .bottom {
+            background: url("{% static 'images/barra.png' %}");
+            background-size: cover;
+            background-position: center;
+        }
+        .bottom .copyright {
+            color: #1599a300;
+            font-weight: 600;
+        }
+        .copyright a {
+            color: #fdfdfdce;
+            margin-left: 3px;
+            padding-right: 3px;
+        }
+        .bottom p {
+            margin-bottom: 0;
+            line-height: 50px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .copyright p span {
+            color: #0b796f;
+        }
+        .bottom .copyright p, .bottom .copyright a:hover{
+            color: #0b7a68da;
+        }
+        .form-group button {
+            font-family: 'Raleway';
+        }
 
+        .container a button{
+            font-family: 'Raleway';
+        }
 
-{% endblock %}
+        .subtitulo h1{
+            font-family: 'Raleway';
+            font-weight: bold;
+            color: #6ad382 ;
+        }
 
+        .form-control option{
+            font-family:'Roboto';
+        }
 
-{% block footer %}
+        .opciones{
+            font-family:'Roboto';
+        }
 
-<div class="footer page-footer linea1">
-    <div class="bottom section-padding">
-        <div class="container linea1">
-            <div class="row linea1">
-                <div class="col-md-12 text-center linea1">
-                    <div class="copyright">
-                        <p>© <span>2020</span> <a href="#" class="transition">MyPOL-Org  -  Informatorio</a> All rights reserved.</p>
+        
+    </style>
+    <title>{% block title%}MyPOL-Mi Prestador Online{% endblock%}</title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}"
+
+  </head>
+
+    <body>
+    
+        <!--parte inicial de presentacion, PANTALLA 1-->
+
+        
+        <!--CUERPO PANTALLAS 2-3-4-5-6-7-8-9 (PANTALLAS CON BARRA NAVEGACION)-->
+        <div class="cuerpo" id="cuerpito">
+            <!--agregar barra de navegacion (PANTALLAS CON BARRA NAVEGACION)-->
+            <nav class="navbar section navbar-expand-lg navbar-dark bg-info sticky-top">
+                <!--intento de boton para atras-->
+                <a href="/encontraTuPol">
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" style="color:white;" class="bi bi-arrow-left-circle mr-2 ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                    </svg>
+                </a>
+                
+                
+                
+                <!--logo de marca, barra navegacion-->
+                <a class="navbar-brand mt-2 ml-3" href="/">
+                    <img src="{% static 'images/LogoBlanco-1.png' %}" width="160" alt="" loading="lazy">
+                </a>
+        
+                <!--boton de menu desplegable-->
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#Menudesplegable" aria-controls="#Menudesplegable" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!--opciones barra navegacin-->
+                <div class="collapse navbar-collapse" id="Menudesplegable">
+                    <div class="opciones navbar-nav ml-auto text-center">
+                        <a style="color:white; " class="nav-link " href="#">Mi Cuenta</a>
+                        <a style="color:white; " class="nav-link" href="/miLista/">Mi Lista</a>
+                        <a style="color:white; " class="nav-link" href="/logout">Cerrar Sesion</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </nav>
 
-{% endblock %}
+            <section class="expand-lg pantallas">
+                <div class="subtitulo" id="busqueda">
+                    <h1 class="text-center text-info pt-5 mb-2 "></br>Mi lista de prestadores</h1>
+            
+            
+                    </br></br></br>
+                    <!--ACA VAN LAS TARJETAS DE LOS DOCTORES CON SUS DETALLES-->
+                    <div id="results-row" class="row d-flex justify-content-around">
+            
+                        {%for resultados in favoritos %}
+                        <div class="col-sm-4 ">
+                            <div class="card text-white bg-info mb-2">
+                                <div class="card-block block-1">
+                                    <div class="card-body">
+                                        <h3 class="card-title">{{resultados.nombrePrestador}}</h3>
+                                        <p class="opciones card-text">Especialidad: {{resultados.nombreEspecialidad}}</br>Obra Social:
+                                            INSSSEP</br>Localidad: {{resultados.localidadPrestador}}</p>
+                                        <a href="{% url 'perfilPOL' resultados.id %}" title="Ver info" class="read-more">Ver
+                                            más info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+            
+                        
+            
+                    </div>
+            
+            
+                </div>
+            
+                <div class="footer linea1">
+                    <div class="bottom section-padding">
+                        <div class="container linea1">
+                            <div class="row linea1">
+                                <div class="col-md-12 text-center linea1">
+                                    <div class="copyright">
+                                        <p>© <span>2020</span> <a href="#" class="transition">MyPOL-Org  -  Informatorio</a> All rights reserved.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        </div>
+
+
+        
+
+        
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+    
+    </body>
+</html>
+
+

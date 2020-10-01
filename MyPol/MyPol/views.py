@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 import datetime
-from django.shortcuts import render, render_to_response, redirect
+from django.shortcuts import render, render_to_response, redirect, get_list_or_404, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 
 from apps.buscador.models import  Localidad, Especialidad, sqlserverconn
@@ -12,7 +12,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import connection
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+favoritos=[]
 
 
 def home(request):
@@ -79,8 +79,23 @@ def perfilPOL(request, id):
 
 @login_required
 def miLista(request):
-    return render(request, "miLista.html", {})
+    context={'favoritos':favoritos}
+    
+    return render(request, "miLista.html", context)
 
+
+@login_required
+def addFav(request, id):
+    lista=sqlserverconn.objects.all()
+    resultados=sqlserverconn.objects.get(id= id)
+
+    if resultados not in favoritos:
+        favoritos.append(resultados)
+        
+    context={'resultados':resultados,
+                'lista':lista,
+                'favoritos':favoritos}
+    return render(request,'miLista.html',context)
 
 def base(request):
     return render(request, "base.html")
@@ -89,5 +104,4 @@ def base(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
-
 
