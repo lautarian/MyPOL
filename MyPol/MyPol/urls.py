@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include
+from django.urls import path
 from apps.buscador import views
 from  django.views.generic.base  import  TemplateView 
 from MyPol import views
-
+from django.conf.urls import url
 from MyPol.forms import LoginForm
 
 app_name = 'foobar'
@@ -38,4 +39,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('accounts/', include('apps.accounts.urls')),
     path('logout/',views.logout_view, name="logout"),
+    path('encontraTuPol/resultadosBusq/loca=<str:id>espe=<str:espe>', views.resultadosBusq , name="resultadosBusq"),
+    path('miperfil/',views.miperfil, name="miperfil"),
  ]

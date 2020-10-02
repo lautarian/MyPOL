@@ -25,11 +25,11 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="opciones form-control" id="Especialidad" onchange="guardarVariable()">
-                            <option>-ELIJA UNA ESPECIALIDAD-</option>
+                        <select class="opciones form-control" id="espesel">
+                            <option value="TODAS">-ELIJA UNA ESPECIALIDAD-</option>
                             {%for especialidad in especialidad %}
                                 
-                            <option value={{especialidad.id}}>{{especialidad.nombreEspecialidad}}</option>
+                            <option value={{especialidad.nombreEspecialidad}}>{{especialidad.nombreEspecialidad}}</option>
                             {%endfor%}
                         </select>
                     </div>
@@ -38,7 +38,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="opciones form-control" id="exampleFormControlSelect1">
+                        <select class="opciones form-control">
                             <option>-ELIJA UNA OBRA SOCIAL-</option>
                             <option>Insssep</option>
                         </select>
@@ -47,7 +47,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="opciones form-control" id="exampleFormControlSelect1">
+                        <select class="opciones form-control">
                             <option>-ELIJA UNA PROVINCIA-</option>
                             <option>Chaco</option>
                         </select>
@@ -57,10 +57,10 @@
                 <div class="col-sm">
                     <div class="form-group">
                         </br>
-                        <select class="opciones form-control " id="exampleFormControlSelect1">
-                            <option>-ELIJA UNA LOCALIDAD-</option>
+                        <select class="opciones form-control " id = "locasel" onchange="">
+                            <option  value="TODAS">-ELIJA UNA LOCALIDAD-</option>
                             {%for localidad in localidad %}
-                            <option value={{localidad.id}}>{{localidad.nombreLocalidad}}</option>
+                            <option value={{localidad.nombreLocalidad}}>{{localidad.nombreLocalidad}}</option>
                             {%endfor%}
                         </select>
                     </div>
@@ -72,21 +72,29 @@
             <!--BOTON DE BUSCAR LOS PRESTADORES-->
             <div class="container d-flex justify-content-center">
                 </br></br>
-                <a class="" href="/resultadosBusq"><button type="button"
+                <a class="" ><button type="button" onclick="abrirVinculo()"
                         class="btn btn-outline-info btn-lg">- B U S C A R -</button></a>
 
             </div>
         </div>
 
     </div>
-    <script>
+    <script type="text/javascript">     
         // Select the contents of a text field with id="myText"
-        function guardarVariable() {
-            var x = document.getElementById("Especialidad").value
-            alert(x)
+        var localidad=""
+        var especialidad=""
+       
+        function abrirVinculo() {
+          
+            localidad=document.getElementById("locasel").value
+            especialidad=document.getElementById("espesel").value
+            var url ="resultadosBusq/loca="+document.getElementById("locasel").value+"espe="+document.getElementById("espesel").value
+            //alert(url)
+            window.open(url, "_self");
             //request.session['Especialidad']= x
         }
-    </script>    
+        
+    </script>   
 </section>
 
 {% endblock %}

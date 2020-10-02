@@ -204,7 +204,7 @@
                 <!--opciones barra navegacin-->
                 <div class="collapse navbar-collapse" id="Menudesplegable">
                     <div class="opciones navbar-nav ml-auto text-center">
-                        <a style="color:white; " class="nav-link " href="#">Mi Cuenta</a>
+                        <a style="color:white; " class="nav-link " href="/miperfil/">Mi Cuenta</a>
                         <a style="color:white; " class="nav-link" href="/miLista/">Mi Lista</a>
                         <a style="color:white; " class="nav-link" href="/logout">Cerrar Sesion</a>
                     </div>
@@ -216,20 +216,21 @@
                     <h1 class="text-center text-info pt-5 mb-2 "></br>Mi lista de prestadores</h1>
             
             
-                    </br></br></br>
+                    </br>
                     <!--ACA VAN LAS TARJETAS DE LOS DOCTORES CON SUS DETALLES-->
                     <div id="results-row" class="row d-flex justify-content-around">
             
                         {%for resultados in favoritos %}
                         <div class="col-sm-4 ">
-                            <div class="card text-white bg-info mb-2">
+                            <div class="card text-white bg-info mb-2 ml-3 mr-3">
                                 <div class="card-block block-1">
                                     <div class="card-body">
                                         <h3 class="card-title">{{resultados.nombrePrestador}}</h3>
                                         <p class="opciones card-text">Especialidad: {{resultados.nombreEspecialidad}}</br>Obra Social:
-                                            INSSSEP</br>Localidad: {{resultados.localidadPrestador}}</p>
-                                        <a href="{% url 'perfilPOL' resultados.id %}" title="Ver info" class="read-more">Ver
-                                            más info<i class="fa fa-angle-double-right ml-2"></i></a>
+                                            INSSSEP</br>Localidad: {{resultados.localidadPrestador}}</br>Direccion: {{resultados.direccionPrestador}}
+                                            </br>Numeros de contacto: {{resultados.telefonoPrestador}}
+                                        ç</p>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +243,7 @@
             
             
                 </div>
-            
+                </br></br></br></br></br></br></br></br></br></br></br></br>
                 <div class="footer linea1">
                     <div class="bottom section-padding">
                         <div class="container linea1">
@@ -256,8 +257,9 @@
                         </div>
                     </div>
                 </div>
+                
             </section>
-        
+            
         </div>
 
 

@@ -199,7 +199,7 @@
                 <!--opciones barra navegacin-->
                 <div class="collapse navbar-collapse" id="Menudesplegable">
                     <div class="opciones navbar-nav ml-auto text-center">
-                        <a style="color:white; " class="nav-link " href="#">Mi Cuenta</a>
+                        <a style="color:white; " class="nav-link " href="/miperfil/">Mi Cuenta</a>
                         <a style="color:white; " class="nav-link" href="/miLista/">Mi Lista</a>
                         <a style="color:white; " class="nav-link" href="/logout">Cerrar Sesion</a>
                     </div>
@@ -217,7 +217,7 @@
             
                         {%for resultados in page_obj %}
                         <div class="col-sm-4 ">
-                            <div class="card">
+                            <div class="card ml-3 mr-3 mb-2">
                                 <div class="card-block block-1">
                                     <div class="card-body">
                                         <h3 class="card-title">{{resultados.nombrePrestador}}</h3>
@@ -234,69 +234,70 @@
             
                         
                                
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-            
-            
-                                {% if page_obj.has_previous %} 
-            
-                                    <li class="page-item">
-            
-                                        <a class="page-link" href="?page=1" aria-label="First">
-                                            <span aria-hidden="true">&lt;&lt; </span>
-                                            
-                                        
-                                        </a>
-                                        
-                                    </li>
-                                    <li class="page-item">
-            
-                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                                            <span aria-hidden="true">&lt; </span>
-                                            
-                                        
-                                        </a>
-                                        
-                                    </li>
-                                {% endif %}
-            
-                                <li class="page-item">
-            
-                                    <a class="page-link" aria-label="Page">
-                                        <span class="current">
-                                            Pág. {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
-                                        </span>
-                                    </a>
-                                </li>
-            
-                                {% if page_obj.has_next %}
-                                    <li class="page-item">
-            
-                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                                            <span aria-hidden="true">&gt;</span>
-                                            
-                                        
-                                        </a>
-                                        
-                                    </li>
-                                    <li class="page-item">
-            
-                                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
-                                            <span aria-hidden="true">&gt;&gt;</span>
-                                            
-                                        
-                                        </a>
-                                        
-                                    </li>
-                                {% endif %}
-            
-                              
-                            </ul>
-                        </nav>
+                        
                         
             
                     </div>
-            
+
+                    <nav aria-label="Page navigation example" class="navbar navbar-expand-lg justify-content-around">
+                        <ul class="pagination">
+        
+        
+                            {% if page_obj.has_previous %} 
+        
+                                <li class="page-item">
+        
+                                    <a class="page-link" href="?page=1" aria-label="First">
+                                        <span aria-hidden="true">&lt;&lt; </span>
+                                        
+                                    
+                                    </a>
+                                    
+                                </li>
+                                <li class="page-item">
+        
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                        <span aria-hidden="true">&lt; </span>
+                                        
+                                    
+                                    </a>
+                                    
+                                </li>
+                            {% endif %}
+        
+                            <li class="page-item">
+        
+                                <a class="page-link" aria-label="Page">
+                                    <span class="current">
+                                        Pág. {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                                    </span>
+                                </a>
+                            </li>
+        
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+        
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">&gt;</span>
+                                        
+                                    
+                                    </a>
+                                    
+                                </li>
+                                <li class="page-item">
+        
+                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                                        <span aria-hidden="true">&gt;&gt;</span>
+                                        
+                                    
+                                    </a>
+                                    
+                                </li>
+                            {% endif %}
+        
+                          
+                        </ul>
+                    </nav>
             
                 </div>
             
